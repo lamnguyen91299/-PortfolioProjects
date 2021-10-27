@@ -1,8 +1,5 @@
 -- Big project for SQL
--- Link instruction: https://docs.google.com/spreadsheets/d/1WnBJsZXj_4FDi2DyfLH1jkWtfTridO2icWbWCh7PLs8/edit#gid=0
 
--- FROM `bigquery-public-data.google_analytics_sample.ga_sessions_*` as data
---     Where _table_suffix between '20170601' and '20170731'
 -- Query 01: calculate total visit, pageview, transaction and revenue for Jan, Feb and March 2017 order by month
 #standardSQL
 
@@ -53,7 +50,8 @@ ORDER BY 4 DESC
 
 
 
---Query 04: Average number of product pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017. Note: totals.transactions >=1 for purchaser and totals.transactions is null for non-purchaser
+--Query 04: Average number of product pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017. 
+Note: totals.transactions >=1 for purchaser and totals.transactions is null for non-purchaser
 #standardSQL
 WITH nonpurchase as (
     SELECT
